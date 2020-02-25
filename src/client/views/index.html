@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="#">
+        <title>Travel Planner</title>
+    </head>
+
+    <body>
+
+        <header>
+            <div class="logo">
+                <h1>Travel Planner</h1>
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <form class="travelBox">
+                    <label for="location">Enter Destination</label>
+                    <input id="location" type="text" name="input" placeholder="e.g. Paris">
+                    <label for="travelDate">Travel Date</label>
+                    <input id="travelDate" type="date" placeholder="MM/DD/YYYY" />      
+                    <input id= "submit" type="submit" name="" value="submit">
+                </form>
+            <section>
+
+            <section id="resultBox">
+                <div id="timing"></div>
+                <div id="travelSum"></div>
+                <div id="weatherSum"></div>
+                <img id="travelPic" src="">
+            </section>
+        </main>
+
+        <footer>
+            <p>2020</p>
+        </footer>
+        
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>
+    </body>
+</html>
