@@ -16,10 +16,8 @@ document.getElementById('submit').addEventListener('click', () => {
     }
 });
 
-import './styles/resets.scss'
+import './styles/style.scss'
 import './styles/header.scss'
-import './styles/base.scss'
-import './styles/form.scss'
 import './styles/footer.scss'
 
 export {

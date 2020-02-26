@@ -1,0 +1,85 @@
+
+body {
+    height: 100%;
+    margin: 0;
+    font-family: sans-serif;
+	display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "header"
+      "main"
+      "footer";
+}
+
+main {
+	grid-area: main;
+	margin: auto;
+	align-items: center;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	margin-bottom: 0;
+	display: grid;
+	grid-gap: 15px;
+	grid-template-columns: auto;
+	grid-template-rows: auto;
+	grid-template-areas: 
+	  "section1"
+	  "section2";
+}
+ 
+.travelBox {
+	grid-area: section1;
+	display: flex;
+	flex-direction: column;
+	padding: 15px;
+}
+
+#resultBox {
+	grid-area: section2;
+	display: flex;
+	flex-direction: column;
+}
+
+section {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+	display: flex;
+	align-items: center;
+	margin: auto;
+    flex: 1 100%;
+    flex-flow: row;
+	flex-basis: auto;
+}
+
+#submit {
+	background-color: lightblue;
+}
+
+
+@media (max-width: 850px) {
+	section{
+		flex-flow: column;
+	}
+
+	.travelBox {
+		width: 90%;
+	}
+
+	input{
+		height: 50px;
+	}
+
+	#submit {
+		height: 60px;
+		margin-top: 15px;
+	}
+}
+
+@media (max-width: 850px) {
+	section,
+	img {
+		width: 300px;
+		height: auto;
+	}
+}

@@ -1,15 +1,11 @@
 header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 40px;
-    background-color: grey;
+    grid-area: header;
+    background-color: steelblue;
     width: 100%;
-    margin: auto;
-    height: 150px;
-}
-
-.logo h1 {
-    font-size: 2em;
-    color: white;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	box-shadow: 0px 5px 5px silver;
+	color: white;
 }
