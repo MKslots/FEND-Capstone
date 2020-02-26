@@ -14,8 +14,8 @@ app.use(cors());
 
 
 // designates what port the app will listen to for incoming requests
-app.listen(1010, function () {
-    console.log('app listening on http://localhost:1010/')
+app.listen(1015, function () {
+    console.log('app listening on http://localhost:1015/')
 })
 
 app.get('/test', function (req, res) {
@@ -28,14 +28,14 @@ app.get('/', (req, res) => {
 
 app.post('/darkSkyPost', async (req,res) => {
   const data = await fetch(req.body.url);
-  console.log(req.body.url);
   const weatherData = await data.json();
-  const darkSkyAPI = {
+  const objAPI = {
     tempHigh: Math.round(weatherData.daily.data[0].temperatureHigh),
     tempLow: Math.round(weatherData.daily.data[0].temperatureLow),
-    summary: weatherData.daily.data[0].summary
+    summary: weatherData.daily.data[0].summary,
   }
-  res.send(darkSkyAPI);
+  console.log(objAPI);
+  res.send(objAPI);
 });
 
 module.exports = app

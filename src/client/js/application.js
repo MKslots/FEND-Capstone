@@ -45,7 +45,7 @@ const getWeather = async (apiData, date) => {
     const lati = apiData.coord.lat;
     const long = apiData.coord.lon;
     const url = (daysBtwn > 7) ? `https://api.darksky.net/forecast/${darkSkyAPIKey}/${lati},${long},${unixDate}`:`https://api.darksky.net/forecast/${darkSkyAPIKey}/${lati},${long}`;
-    const getData = await fetch('http://localhost:1010/darkSkyPost', {
+    const getData = await fetch('http://localhost:1015/darkSkyPost', {
         method: 'POST',
         cache: 'no-cache', 
         credentials: 'same-origin',
@@ -109,6 +109,5 @@ const UIupdate = () => {
 // EXPORT FUNCTION 
 
 export const handleAPIData = async (location) => {
-    getCoordinates(location).then(() => getWeather(apiData,date)).then(() => 
-    getPicture(location)).then(()=> UIupdate(apiData));
+    getCoordinates(location).then(() => getPicture(location)).then(()=> getWeather(apiData,date)).then(() => UIupdate(apiData));
 }
